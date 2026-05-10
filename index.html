@@ -5,532 +5,220 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Speakora Dashboard</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+
+body{
+  margin:0;
+  min-height:100vh;
+
+  background-image:url('background.png');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+</style>    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #dce8c9, #edf4df);
-      color: #10233f;
-      padding: 24px;
+    body{
+      width:100%;
+      min-height:100vh;
+      overflow-x:hidden;
+      background:#d7ef9f;
     }
 
-    .container {
-      backdrop-filter: blur(10px);
-      max-width: 1500px;
-      margin: auto;
-      background: white;
-      border-radius: 28px;
-      border: 1px solid #edf0ed;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    /* ФОНОВАЯ КАРТИНКА */
+    .dashboard{
+      position:relative;
+      width:100%;
+      min-height:100vh;
+      background-image:url('dashboard.png');
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 28px 40px;
-      border-bottom: 1px solid #eef1ef;
+    /* ОБЩИЕ СТИЛИ КНОПОК */
+    .clickable{
+      position:absolute;
+      display:block;
+      border-radius:20px;
+      transition:0.3s;
     }
 
-    .logo {
-      text-transform: uppercase;
-      font-size: 42px;
-      font-weight: 700;
-      color: #243b5a;
-      letter-spacing: -1px;
+    .clickable:hover{
+      transform:scale(1.03);
+      box-shadow:0 0 20px rgba(255,255,255,0.4);
     }
 
-    nav {
-      display: flex;
-      gap: 54px;
-      font-size: 18px;
-      font-weight: 500;
+    /* TOP MENU */
+
+    .dashboard-btn{
+      top:18px;
+      left:270px;
+      width:190px;
+      height:65px;
     }
 
-    nav a {
-      text-decoration: none;
-      color: #10233f;
+    .courses-btn{
+      top:18px;
+      left:500px;
+      width:160px;
+      height:65px;
     }
 
-    nav a.active {
-      color: #d68a00;
-      border-bottom: 3px solid #d68a00;
-      padding-bottom: 10px;
+    .learning-btn{
+      top:18px;
+      left:660px;
+      width:190px;
+      height:65px;
     }
 
-    .profile {
-      display: flex;
-      align-items: center;
-      gap: 18px;
+    .homework-btn{
+      top:18px;
+      left:870px;
+      width:220px;
+      height:65px;
     }
 
-    .avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: #f2d6c7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
+    .vocabulary-btn{
+      top:18px;
+      left:1100px;
+      width:180px;
+      height:65px;
     }
 
-    main {
-      padding: 40px;
+    .certificates-btn{
+      top:18px;
+      left:1290px;
+      width:180px;
+      height:65px;
     }
 
-    h1 {
-      font-size: 58px;
-      font-weight: 600;
-      color: #132747;
-      margin-bottom: 16px;
+    /* UNIT BUTTONS */
+
+    .intro-btn{
+      top:225px;
+      left:120px;
+      width:245px;
+      height:105px;
     }
 
-    .subtitle {
-      font-size: 28px;
-      color: #66768f;
-      margin-bottom: 60px;
+    .unit1-btn{
+      top:135px;
+      left:440px;
+      width:215px;
+      height:105px;
     }
 
-    .top-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 30px;
+    .unit2-btn{
+      top:225px;
+      left:755px;
+      width:240px;
+      height:105px;
     }
 
-    .top-row h2 {
-      font-size: 42px;
-      font-weight: 600;
+    .unit3-btn{
+      top:450px;
+      left:845px;
+      width:210px;
+      height:100px;
     }
 
-    .view-switch {
-      display: flex;
-      gap: 30px;
-      color: #6f7e96;
-      font-size: 24px;
+    .unit4-btn{
+      top:660px;
+      left:820px;
+      width:220px;
+      height:100px;
     }
 
-    .view-switch .active {
-      color: #d68a00;
-      font-weight: 600;
+    .unit5-btn{
+      top:820px;
+      left:690px;
+      width:220px;
+      height:100px;
     }
 
-    .courses-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 28px;
+    .unit6-btn{
+      top:820px;
+      left:430px;
+      width:220px;
+      height:100px;
     }
 
-    .card {
-      background: white;
-      border: 1px solid #edf0ed;
-      border-radius: 30px;
-      padding: 28px;
-      transition: 0.3s;
+    .unit7-btn{
+      top:740px;
+      left:110px;
+      width:220px;
+      height:100px;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    .unit8-btn{
+      top:455px;
+      left:45px;
+      width:210px;
+      height:100px;
     }
 
-    .card h3 {
-      font-size: 34px;
-      margin-bottom: 10px;
-      color: #132747;
-    }
+    /* ADAPTIVE */
 
-    .card p {
-      font-size: 24px;
-      color: #64748b;
-    }
+    @media(max-width:1400px){
 
-    .icon-circle {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      background: #f7e6b7;
-      margin: 40px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 54px;
-    }
-
-    .progress-row {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .progress-bar {
-      flex: 1;
-      height: 8px;
-      background: #e8eceb;
-      border-radius: 50px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: #f2a623;
-      border-radius: 50px;
-    }
-
-    .progress-text {
-      font-size: 22px;
-      font-weight: 500;
-    }
-
-    .bottom-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .analytics-card {
-      background: white;
-      border: 1px solid #edf0ed;
-      border-radius: 30px;
-      padding: 30px;
-    }
-
-    .analytics-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 30px;
-    }
-
-    .analytics-header h3 {
-      font-size: 34px;
-    }
-
-    .analytics-header span {
-      color: #7b8797;
-      font-size: 22px;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .stat-box {
-      border: 1px solid #edf0ed;
-      border-radius: 22px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .chart {
-      box-shadow: 0 6px 18px rgba(242,166,35,0.25);
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      background: conic-gradient(#49c5b6 var(--percent), #e8eceb 0deg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
-      position: relative;
-    }
-
-    .chart::before {
-      content: '';
-      position: absolute;
-      width: 78px;
-      height: 78px;
-      border-radius: 50%;
-      background: white;
-    }
-
-    .chart span {
-      position: relative;
-      z-index: 2;
-      font-size: 20px;
-      font-weight: 600;
-      color: #132747;
-    }
-
-    .stat-box p {
-      color: #6d7b90;
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .stat-box h4 {
-      font-size: 28px;
-      font-weight: 600;
-      color: #132747;
-    }
-
-    @media(max-width: 1200px) {
-      .courses-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .dashboard{
+        background-size:contain;
+        background-position:top center;
       }
 
-      .bottom-grid {
-        grid-template-columns: 1fr;
+      .clickable{
+        transform:scale(0.8);
+        transform-origin:top left;
       }
     }
 
-    @media(max-width: 768px) {
-      nav {
-        display: none;
-      }
-
-      .courses-grid {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 42px;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-    }
   </style>
 </head>
+
 <body>
 
-<div class="container">
+<div class="dashboard">
 
-  <header>
-    <div class="logo">SPEAKORA</div>
+  <!-- MENU -->
 
-    <nav>
-      <a class="active" href="#">Dashboard</a>
-      <a href="#">Courses</a>
-      <a href="#">My Learning</a>
-      <a href="#">My Homework</a>
-      <a href="#">Vocabulary</a>
-      <a href="#">Certificates</a>
-    </nav>
+  <a href="dashboard.html" class="clickable dashboard-btn"></a>
 
-    <div class="profile">
-      <div>🔔</div>
-      <div class="avatar">👩</div>
-      <div style="font-size:20px;font-weight:500;">Amelia</div>
-    </div>
-  </header>
+  <a href="courses.html" class="clickable courses-btn"></a>
 
-  <main>
+  <a href="learning.html" class="clickable learning-btn"></a>
 
-    <h1>Welcome back, Amelia! 👋</h1>
-    <div class="subtitle">Ready for today’s lesson?</div>
+  <a href="homework.html" class="clickable homework-btn"></a>
 
-    <div class="top-row">
-      <h2>Your Course</h2>
+  <a href="vocabulary.html" class="clickable vocabulary-btn"></a>
 
-      <div class="view-switch">
-        <div class="active">◫ Grid</div>
-        <div>☰ List</div>
-      </div>
-    </div>
+  <a href="certificates.html" class="clickable certificates-btn"></a>
 
-    <div class="courses-grid">
+  <!-- UNITS -->
 
-      <!-- Upload your generated image into images/study-hub.png -->
-      <div style="grid-column: 1 / -1; background:#ffffff; border-radius:32px; padding:40px; border:1px solid #edf0ed; margin-bottom:10px;">
-        <img src="images/study-hub.png" alt="Study Hub" style="width:100%; border-radius:24px; display:block;">
-      </div>
+  <a href="introduction.html" class="clickable intro-btn"></a>
 
-      <div class="card">
-        <h3>Intro</h3>
-        <p>Hobbies</p>
-        <div class="icon-circle">⚾</div>
-        <div class="progress-row">
-          <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
-          <div class="progress-text">100%</div>
-        </div>
-      </div>
+  <a href="unit1.html" class="clickable unit1-btn"></a>
 
-      <div class="card">
-        <h3>Unit 1</h3>
-        <p>Feelings</p>
-        <div class="icon-circle">🙂</div>
-        <div class="progress-row">
-          <div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div>
-          <div class="progress-text">80%</div>
-        </div>
-      </div>
+  <a href="unit2.html" class="clickable unit2-btn"></a>
 
-      <div class="card">
-        <h3>Unit 2</h3>
-        <p>Adventure</p>
-        <div class="icon-circle">⛰️</div>
-        <div class="progress-row">
-          <div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div>
-          <div class="progress-text">60%</div>
-        </div>
-      </div>
+  <a href="unit3.html" class="clickable unit3-btn"></a>
 
-      <div class="card">
-        <h3>Unit 3</h3>
-        <p>On screen</p>
-        <div class="icon-circle">📺</div>
-        <div class="progress-row">
-          <div class="progress-bar"><div class="progress-fill" style="width:40%"></div></div>
-          <div class="progress-text">40%</div>
-        </div>
-      </div>
+  <a href="unit4.html" class="clickable unit4-btn"></a>
 
-      <div class="card">
-        <h3>Unit 4</h3>
-        <p>Our planet</p>
-        <div class="icon-circle">🌍</div>
-        <div class="progress-row">
-          <div class="progress-bar"><div class="progress-fill" style="width:30%"></div></div>
-          <div class="progress-text">30%</div>
-        </div>
-      </div>
+  <a href="unit5.html" class="clickable unit5-btn"></a>
 
-      <div class="card">
-        <h3>Unit 5</h3>
-        <p>Ambition</p>
-        <div class="icon-circle">🪜</div>
-        <div class="progress-row">
-          <div class="progress-bar"><div class="progress-fill" style="width:25%"></div></div>
-          <div class="progress-text">25%</div>
-        </div>
-      </div>
+  <a href="unit6.html" class="clickable unit6-btn"></a>
 
-      <div class="card">
-        <h3>Unit 6</h3>
-        <p>Tourism</p>
-        <div class="icon-circle">📷</div>
-        <div class="progress-row">
-          <div class="progress-bar"><div class="progress-fill" style="width:20%"></div></div>
-          <div class="progress-text">20%</div>
-        </div>
-      </div>
+  <a href="unit7.html" class="clickable unit7-btn"></a>
 
-      <div class="card">
-        <h3>Unit 7</h3>
-        <p>Money</p>
-        <div class="icon-circle">💰</div>
-        <div class="progress-row">
-          <div class="progress-bar"><div class="progress-fill" style="width:15%"></div></div>
-          <div class="progress-text">15%</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Unit 8</h3>
-        <p>Science</p>
-        <div class="icon-circle">⚗️</div>
-        <div class="progress-row">
-          <div class="progress-bar"><div class="progress-fill" style="width:10%"></div></div>
-          <div class="progress-text">10%</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Unit 9</h3>
-        <p>Jobs</p>
-        <div class="icon-circle">💼</div>
-        <div class="progress-row">
-          <div class="progress-bar"><div class="progress-fill" style="width:5%"></div></div>
-          <div class="progress-text">5%</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="bottom-grid">
-
-      <div class="analytics-card">
-        <div class="analytics-header">
-          <h3>Daily Progress</h3>
-          <span>Today, May 10</span>
-        </div>
-
-        <div class="stats-grid">
-
-          <div class="stat-box">
-            <div class="chart" style="--percent: 144deg">
-              <span>40%</span>
-            </div>
-            <p>Lessons Completed</p>
-            <h4>2 / 5</h4>
-          </div>
-
-          <div class="stat-box">
-            <div class="chart" style="--percent: 220deg">
-              <span>65%</span>
-            </div>
-            <p>Study Time</p>
-            <h4>25 min</h4>
-          </div>
-
-          <div class="stat-box">
-            <div class="chart" style="--percent: 306deg">
-              <span>85%</span>
-            </div>
-            <p>Score</p>
-            <h4>85%</h4>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="analytics-card">
-        <div class="analytics-header">
-          <h3>Weekly Progress</h3>
-          <span>May 4 – May 10</span>
-        </div>
-
-        <div class="stats-grid">
-
-          <div class="stat-box">
-            <div class="chart" style="--percent: 216deg">
-              <span>60%</span>
-            </div>
-            <p>Units Completed</p>
-            <h4>60%</h4>
-          </div>
-
-          <div class="stat-box">
-            <div class="chart" style="--percent: 205deg">
-              <span>57%</span>
-            </div>
-            <p>Speaking Practice</p>
-            <h4>4 / 7</h4>
-          </div>
-
-          <div class="stat-box">
-            <div class="chart" style="--percent: 280deg">
-              <span>78%</span>
-            </div>
-            <p>Vocabulary Learned</p>
-            <h4>28</h4>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-
-  </main>
+  <a href="unit8.html" class="clickable unit8-btn"></a>
 
 </div>
 
