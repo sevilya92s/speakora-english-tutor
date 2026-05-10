@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speakora AI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+
+  <div class="logo-block">
+    <div class="logo-icon">🌿</div>
+  </div>
+
+  <nav class="nav">
+    <a href="#">Главная</a>
+    <a href="#">Курсы</a>
+    <a href="#">Speaking</a>
+    <a href="#">Grammar</a>
+    <a href="#">Vocabulary</a>
+    <a href="#">Контакты</a>
+  </nav>
+
+  <div class="header-buttons">
+    <button class="login-btn">Вход</button>
+    <button class="register-btn">Регистрация</button>
+  </div>
+
+</header>
+
+<section class="hero-section">
+
+  <div class="hero-left">
+
+    <h1>
+      Английский.<br>
+      <span class="green">Легко.</span>
+      <span class="orange">Качественно.</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      AI-преподаватель, speaking practice,
+      живой разговор и интерактивное обучение.
+    </p>
+
+    <div class="hero-buttons">
+      <button class="main-btn">Начать обучение</button>
+      <button class="secondary-btn">Пройти тест</button>
+    </div>
+
+    <div class="hero-features">
+      <div class="feature-card">🎙 AI Speaking</div>
+      <div class="feature-card">🤖 Voice Tutor</div>
+      <div class="feature-card">📚 Interactive Lessons</div>
+      <div class="feature-card">🎧 Listening Practice</div>
+    </div>
+
+  </div>
+
+  <div class="hero-right">
+
+    <div class="speech-bubble" id="speechBubble">
+      Hello! What's your name?
+    </div>
+
+    <div class="avatar-wrapper">
+
+      <div class="avatar-glow"></div>
+
+      <img
+        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop"
+        class="avatar"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="ai-chat-section">
+
+  <div class="chat-container">
+
+    <div class="chat-header">
+
+      <div class="chat-title-block">
+        <h2>Speakora AI Tutor</h2>
+        <p>Practice speaking English with AI</p>
+      </div>
+
+      <div class="chat-status">
+        <span class="status-dot"></span>
+        Online
+      </div>
+
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+
+      <div class="message ai-message">
+        <div class="message-avatar">🤖</div>
+
+        <div class="message-content">
+          <p>Hello! My name is Emma. What's your name?</p>
+          <span>AI Tutor</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="chat-controls">
+
+      <button class="voice-btn" id="voiceButton">
+        🎙 Speak
+      </button>
+
+      <input
+        type="text"
+        id="messageInput"
+        placeholder="Write your answer..."
+      >
+
+      <button class="send-btn" id="sendButton">
+        Send
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="levels-section">
+
+  <h2>Choose Your Level</h2>
+
+  <div class="levels-grid">
+
+    <div class="level-card green-card">
+      <h3>A1</h3>
+      <p>Beginner English</p>
+      <button>Start</button>
+    </div>
+
+    <div class="level-card lightgreen-card">
+      <h3>A2</h3>
+      <p>Basic Communication</p>
+      <button>Start</button>
+    </div>
+
+    <div class="level-card orange-card">
+      <h3>B1</h3>
+      <p>Intermediate Speaking</p>
+      <button>Start</button>
+    </div>
+
+    <div class="level-card orange2-card">
+      <h3>B2</h3>
+      <p>Confident English</p>
+      <button>Start</button>
+    </div>
+
+    <div class="level-card red-card">
+      <h3>C1</h3>
+      <p>Advanced Fluency</p>
+      <button>Start</button>
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">🌿 Speakora</div>
+  <p>© 2026 Speakora AI English Platform</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

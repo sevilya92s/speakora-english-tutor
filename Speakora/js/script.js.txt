@@ -1,0 +1,106 @@
+const sendButton = document.getElementById("sendButton");
+const messageInput = document.getElementById("messageInput");
+const chatMessages = document.getElementById("chatMessages");
+const speechBubble = document.getElementById("speechBubble");
+const voiceButton = document.getElementById("voiceButton");
+
+const aiReplies = [
+  "Nice to meet you!",
+  "Great answer!",
+  "Let's practice more English.",
+  "Awesome! Keep speaking.",
+  "You are doing great!"
+];
+
+function addUserMessage(text){
+
+  const message = document.createElement("div");
+
+  message.classList.add("message","user-message");
+
+  message.innerHTML = `
+
+    <div class="message-avatar">??</div>
+
+    <div class="message-content">
+      <p>${text}</p>
+      <span>You</span>
+    </div>
+
+  `;
+
+  chatMessages.appendChild(message);
+
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
+}
+
+function addAIMessage(text){
+
+  const message = document.createElement("div");
+
+  message.classList.add("message","ai-message");
+
+  message.innerHTML = `
+
+    <div class="message-avatar">??</div>
+
+    <div class="message-content">
+      <p>${text}</p>
+      <span>AI Tutor</span>
+    </div>
+
+  `;
+
+  chatMessages.appendChild(message);
+
+  speechBubble.innerText = text;
+
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
+}
+
+function sendMessage(){
+
+  const text = messageInput.value.trim();
+
+  if(text === "") return;
+
+  addUserMessage(text);
+
+  messageInput.value = "";
+
+  setTimeout(()=>{
+
+    const randomReply =
+      aiReplies[Math.floor(Math.random()*aiReplies.length)];
+
+    addAIMessage(randomReply);
+
+  },1000);
+
+}
+
+sendButton.addEventListener("click",sendMessage);
+
+messageInput.addEventListener("keypress",(e)=>{
+
+  if(e.key === "Enter"){
+    sendMessage();
+  }
+
+});
+
+voiceButton.addEventListener("click",()=>{
+
+  voiceButton.innerText = "?? Listening...";
+
+  setTimeout(()=>{
+
+    voiceButton.innerText = "?? Speak";
+
+    addAIMessage("I can hear you! Let's continue.");
+
+  },3000);
+
+});
