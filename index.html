@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -42,9 +42,10 @@
     }
 
     .logo {
-      font-size: 32px;
-      font-weight: 600;
+      font-size: 42px;
+      font-weight: 700;
       color: #243b5a;
+      letter-spacing: -1px;
     }
 
     nav {
@@ -229,22 +230,52 @@
       border: 1px solid #edf0ed;
       border-radius: 22px;
       padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
-    .stat-box .emoji {
-      font-size: 32px;
+    .chart {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: conic-gradient(#49c5b6 var(--percent), #e8eceb 0deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .chart::before {
+      content: '';
+      position: absolute;
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      background: white;
+    }
+
+    .chart span {
+      position: relative;
+      z-index: 2;
+      font-size: 20px;
+      font-weight: 600;
+      color: #132747;
     }
 
     .stat-box p {
-      margin-top: 14px;
       color: #6d7b90;
       font-size: 18px;
+      margin-bottom: 8px;
     }
 
     .stat-box h4 {
-      margin-top: 10px;
-      font-size: 42px;
+      font-size: 28px;
       font-weight: 600;
+      color: #132747;
     }
 
     @media(max-width: 1200px) {
@@ -281,7 +312,7 @@
 <div class="container">
 
   <header>
-    <div class="logo">S SPEAKORA</div>
+    <div class="logo">SPEAKORA</div>
 
     <nav>
       <a class="active" href="#">Dashboard</a>
@@ -426,23 +457,31 @@
         </div>
 
         <div class="stats-grid">
+
           <div class="stat-box">
-            <div class="emoji">📘</div>
+            <div class="chart" style="--percent: 144deg">
+              <span>40%</span>
+            </div>
             <p>Lessons Completed</p>
             <h4>2 / 5</h4>
           </div>
 
           <div class="stat-box">
-            <div class="emoji">🕒</div>
+            <div class="chart" style="--percent: 220deg">
+              <span>65%</span>
+            </div>
             <p>Study Time</p>
             <h4>25 min</h4>
           </div>
 
           <div class="stat-box">
-            <div class="emoji">⭐</div>
+            <div class="chart" style="--percent: 306deg">
+              <span>85%</span>
+            </div>
             <p>Score</p>
             <h4>85%</h4>
           </div>
+
         </div>
       </div>
 
@@ -453,23 +492,31 @@
         </div>
 
         <div class="stats-grid">
+
           <div class="stat-box">
-            <div class="emoji">📊</div>
+            <div class="chart" style="--percent: 216deg">
+              <span>60%</span>
+            </div>
             <p>Units Completed</p>
             <h4>60%</h4>
           </div>
 
           <div class="stat-box">
-            <div class="emoji">🎤</div>
+            <div class="chart" style="--percent: 205deg">
+              <span>57%</span>
+            </div>
             <p>Speaking Practice</p>
             <h4>4 / 7</h4>
           </div>
 
           <div class="stat-box">
-            <div class="emoji">📝</div>
+            <div class="chart" style="--percent: 280deg">
+              <span>78%</span>
+            </div>
             <p>Vocabulary Learned</p>
             <h4>28</h4>
           </div>
+
         </div>
       </div>
 
