@@ -1,0 +1,266 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPEAKORA</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#ffffff;
+    overflow-x:hidden;
+}
+
+/* LOGO */
+
+.logo{
+    position:absolute;
+    top:25px;
+    left:35px;
+
+    font-size:34px;
+    font-weight:700;
+
+    color:#166534;
+}
+
+/* QUOTE */
+
+.quote-bar{
+    text-align:center;
+    padding-top:40px;
+
+    font-size:24px;
+    font-style:italic;
+    font-weight:600;
+
+    color:#16a34a;
+}
+
+/* TITLE */
+
+.hero-title{
+
+    text-align:center;
+
+    margin-top:40px;
+    margin-bottom:30px;
+}
+
+.hero-title h1{
+
+    font-size:90px;
+    line-height:1.05;
+
+    color:#111827;
+}
+
+.hero-title span{
+    color:#16a34a;
+}
+
+/* IMAGE */
+
+.hero{
+
+    display:flex;
+    justify-content:center;
+
+    margin-bottom:40px;
+}
+
+.hero img{
+
+    width:80%;
+    max-width:1100px;
+    height:auto;
+}
+
+/* BUTTONS */
+
+.cards{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:0 40px 70px;
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:25px;
+}
+
+.card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:#111827;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+}
+
+.icon{
+
+    font-size:52px;
+
+    margin-bottom:12px;
+}
+
+.title{
+
+    font-size:18px;
+    font-weight:700;
+}
+
+/* MOBILE */
+
+@media(max-width:1100px){
+
+.cards{
+grid-template-columns:repeat(3,1fr);
+}
+
+.hero-title h1{
+font-size:65px;
+}
+
+}
+
+@media(max-width:700px){
+
+.cards{
+grid-template-columns:repeat(2,1fr);
+}
+
+.hero-title h1{
+font-size:45px;
+}
+
+.logo{
+font-size:24px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="logo">
+💬 SPEAKORA
+</div>
+
+<div class="quote-bar">
+<span id="quote">
+"Learn something new today."
+</span>
+</div>
+
+<div class="hero-title">
+<h1>
+Learn English<br>
+<span>Smarter</span>
+</h1>
+</div>
+
+<div class="hero">
+<img src="background.png" alt="Speakora">
+</div>
+
+<div class="cards">
+
+<a href="#" class="card">
+<div class="icon">📊</div>
+<div class="title">Dashboard</div>
+</a>
+
+<a href="#" class="card">
+<div class="icon">📚</div>
+<div class="title">Courses</div>
+</a>
+
+<a href="#" class="card">
+<div class="icon">🎯</div>
+<div class="title">My Learning</div>
+</a>
+
+<a href="#" class="card">
+<div class="icon">📝</div>
+<div class="title">Homework</div>
+</a>
+
+<a href="#" class="card">
+<div class="icon">💬</div>
+<div class="title">Vocabulary</div>
+</a>
+
+<a href="#" class="card">
+<div class="icon">🏆</div>
+<div class="title">Certificates</div>
+</a>
+
+</div>
+
+<script>
+
+const quotes = [
+
+"Learn something new today.",
+"Practice makes progress.",
+"Every word counts.",
+"Keep learning. Keep growing.",
+"One lesson closer to fluency.",
+"Speak English with confidence.",
+"Small steps. Big progress.",
+"Your future starts today."
+
+];
+
+let current = 0;
+
+setInterval(() => {
+
+current++;
+
+if(current >= quotes.length){
+current = 0;
+}
+
+document.getElementById("quote").innerHTML =
+'"' + quotes[current] + '"';
+
+}, 5000);
+
+</script>
+
+</body>
+</html>
+```
